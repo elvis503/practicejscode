@@ -1,0 +1,37 @@
+// Write a function that accepts a sorted array and a value. Create a left pointer at the start of the array and a right pointer at the end of the array. Create a pointer in the middle.
+
+// If you find the value you want, return the index, if the value is too small, move the left pointer up. If the value is too large, move the right pointer down. If you never find the value return -1. Array has to be sorted from lowest to highest.
+
+function binarySearch(arr,value){
+  let midpoint = Math.round((arr.length - 1) / 2);
+  let midvalue = arr[midpoint]
+  
+  if(value < midvalue){
+    let i = 0;
+    while(i < midpoint){
+    if(arr[i] === value){
+      return i;
+    }else{
+      i++
+    }
+  }
+  }else if(value > midvalue){
+    let j = array.length - 1;
+    while(j > midpoint){
+    if(arr[j] === value){
+      return j;
+    }else{
+      j++
+    }
+  }
+  }else if(value = midvalue){
+    return midpoint;
+  }
+   return -1; 
+  }
+
+binarySearch([2,3,4,5,6,18,37,48,53,83],4);
+      
+      
+      
+      

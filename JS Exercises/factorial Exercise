@@ -1,0 +1,15 @@
+// Write a function called factorial which accepts a number and returns the factorial of that number. A factorial is the product of an integer and all the integers below it. 4! = 4*3*2*1 = 24;
+
+function factorial(number){
+   if(number <= 1){
+     return 1;
+   }else{
+     let total = number;
+     number -= 1;
+     total = total * number;
+     return total * factorial(number - 1);
+   }
+}  
+
+factorial(4);
+

@@ -1,0 +1,40 @@
+// Write a function called sameFrequency. Given two positive integers, find out if the two numbers have the same frequency of digits.
+
+//Example: sameFrequency(218,182) // True
+// sameFrequency(219,299) // False
+//sameFrequency(3320,3203) // True
+
+function sameFrequency(num1,num2){
+  //Find if both numbers are the same length
+  num1 = num1.toString();
+  num2 = num2.toString();
+  
+  if(num1.length === num2.length){
+//If they are same length, count the amount of times each individual digit is in the number
+    let counter1 = new Object;
+    for(let i = 0; i < num1.length; i++){
+      let digit = num1.charAt(i);
+     counter1[digit] ? counter1[digit]++ : counter1[digit] = 1;
+    }
+    
+    let counter2 = new Object;
+    for(let i = 0; i < num2.length; i++){
+      let digit = num2.charAt(i);
+     counter2[digit] ? counter2[digit]++ : counter2[digit] = 1;
+    }
+    
+    for(let key in counter1){
+      if(counter1[key] != counter2[key]){
+        return false;
+      }
+    }
+        
+    return true
+    
+  }else{
+    return false;
+  }
+  
+}
+
+sameFrequency(5555,5555);

@@ -1,0 +1,29 @@
+// Write a recursive function fib which accepts a number and returns the nth number in the Fibonacci sequence. Recall that the Fibonacci sequence is the sequence of the whole numbers. 1,1,2,3,5,8,13,21. Every next number is equal to the sum of the previous two numbers.
+
+// fib(10) // 55
+
+function fib(n){
+  let sequence = [0,1];
+  function sum(){
+    if(n === 1){
+    //skip
+  }else{
+    let sumation = sequence[sequence.length - 1] + sequence[sequence.length-2];
+    sequence.push(sumation);
+    n--;
+    return sum();
+  }
+    return sequence[sequence.length - 1]
+  }
+  return sum();
+}
+
+
+function fib2(n){
+    if (n <= 2) return 1;
+    return fib2(n-1) + fib2(n-2);
+}
+
+fib2(10);
+
+fib(5);

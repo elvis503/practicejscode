@@ -1,0 +1,42 @@
+//Given two strings, write a function to determine if the second string is an anagram of the first.
+
+function validAnagram(str1, str2){
+  //Check if length of both strings is the same
+  if(str1.length === str2.length){
+    //Create an object for each array
+    let checkStr1 = {};
+    let checkStr2 = {};
+    
+    //Write in the each object how many times each letter is in the string
+    for(let i = 0; i < str1.length; i++){
+      let char = str1.charAt(i);
+      checkStr1[char] ? checkStr1[char]++ :  checkStr1[char] = 1;
+      str1.slice(i,1);
+    }
+    
+    for(let i = 0; i < str2.length; i++){
+      let char = str2.charAt(i);
+      checkStr2[char] ? checkStr2[char]++ :  checkStr2[char] = 1;
+      str2.slice(i,1);
+    }
+    
+    
+    //If the number of times each letter is the same in each object, return true, else return false
+    for(let key in checkStr1){
+      if(checkStr1[key] != checkStr2[key]){
+        return false;
+      }
+    }
+   
+    for (let key in checkStr2){
+      if(checkStr1[key] != checkStr2[key]){
+        return false
+      }
+    }
+    return true;
+}else{
+    return false
+  }
+}
+
+validAnagram("key", "yek");

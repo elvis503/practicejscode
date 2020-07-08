@@ -1,0 +1,5 @@
+// Implement a function areThereDuplicates which accepts a variable number of arguments, and checks whether there are any duplicates anomg the arguments passed in. Solve either with freq counter or multiple pointers.
+
+function areThereDuplicates(){
+  
+}

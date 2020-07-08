@@ -1,0 +1,17 @@
+//Write a function called power which accepts a base and a exponent. The function should return the power of the base to the exponent. Do not worry about negative bases and exponents
+
+function power(base, exp){
+  let total = 1;
+  function multiply(total){
+    if(exp === 0){
+      return total
+    }else{
+      total = total * base;
+      exp--;
+      return multiply(total);
+    }
+  }
+   return multiply(total);
+}
+
+power(5,4);

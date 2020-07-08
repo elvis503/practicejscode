@@ -1,0 +1,27 @@
+/* Implement a function called countUniqueValues, which accepts a sorted array, and counts the unique values in the array. There can be negative numbers in the array, but it will always be sorted */
+
+// Example: [-1,-1,0,1,1,2], unique values = 4
+// Example: [-1,-1,-1,-1,-1,2], unique values = 2
+
+function countUniqueValues(arr){
+  let i = 0;
+  let j = 1;
+  
+  while(j < arr.length){
+    let check1 = arr[i];
+    let check2 = arr[j];
+    if(check1 === check2){
+      arr.splice(j,1)
+    }else{
+      j = j + 1;
+      i = i + 1;
+    }
+  }
+  return arr.length;
+}
+
+let values = [1,2,2,2,2,2,2,2,2,2,5];
+countUniqueValues(values);
+
+//WR02-005286023
+//WR02-005287211

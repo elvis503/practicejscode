@@ -1,0 +1,41 @@
+// Write a recursive function called isPalindrome which returns true if the string passed to it is a palindrome (reads the same forward and backward);
+
+function isPalindrome(str){
+  if(str.length > 1){
+    let last = str.length - 1;
+    let first = 0;
+    if(str.charAt(first) === str.charAt(last)){
+      str = str.substring(first +1,last)
+      return isPalindrome(str);
+    }else{
+      return false
+    }
+ }else{
+   return true;
+ }
+}
+
+isPalindrome("taca");
+
+function reverse(str){
+  let newStr = [];
+  for(let i = str.length-1; i >= 0; i--){
+    newStr.push(str.charAt(i));
+  }
+  newStr = newStr.join("");
+  return newStr;
+}
+
+function reverse2(str){
+  if(str === ""){
+    return "";
+  }else{
+    let letter = str.charAt(str.length - 1);
+    str = str.slice(0,str.length - 1);
+    return letter.concat(reverse2(str))
+  }
+}
+
+reverse2("hola")
+
+reverse("hola")
